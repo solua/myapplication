@@ -12,5 +12,10 @@ jobs:
       - run:
           name: testing
           command: ./gradlew test
+      - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
+          path: app/build/reports
+          destination: reports
+      - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
+          path: app/build/test-results
       - run:
           command: ./gradlew build
