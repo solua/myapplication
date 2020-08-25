@@ -10,4 +10,8 @@ jobs:
     steps:
       - checkout
       - run:
+          name: test
+          command: ./gradlew test
+      - run:
+          name: build
           command: ./gradlew build
