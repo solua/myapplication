@@ -1,16 +1,16 @@
 version: 2.1
+
 orbs:
-  android: circleci/android@0.2.1
+  android: circleci/android@0.2.0
+
 jobs:
   build:
+    executor: android/android
+
     steps:
       - checkout
       - run:
-          name: Download Dependencies
-          command: ./gradlew androidDependencies
-      - run:
-          name: Run Tests
+          name: testing
           command: ./gradlew test
       - run:
-          name: Build
           command: ./gradlew build
