@@ -13,5 +13,4 @@ jobs:
           name: test
           command: ./gradlew test
       - run:
-          name: build
           command: ./gradlew build
